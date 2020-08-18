@@ -1,4 +1,6 @@
 ﻿using System;
+using WywozSmieci.Model;
+using WywozSmieci.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -6,11 +8,22 @@ namespace WywozSmieci
 {
     public partial class App : Application
     {
+        
+
         public App()
         {
             InitializeComponent();
+        }
 
-            MainPage = new MainPage();
+        public App(IWywozService rejonService)
+        {
+            InitializeComponent();
+
+
+            MainPage = new MainPage()
+            {
+                BindingContext = new ViewModel(rejonService)
+            };
         }
 
         protected override void OnStart()

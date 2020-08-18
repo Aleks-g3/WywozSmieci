@@ -15,23 +15,20 @@ namespace WywozSmieci
     public partial class MainPage : ContentPage
     {
         
-        private List<Rejon> _Rejon;
-        ViewModel _viewModel;
+        
 
         public MainPage()
         {
-            InitializeComponent();
-           // _viewModel = new ViewModel();
             
-            add();
-            //BindingContext = _viewModel;
+            InitializeComponent();
+           
         }
-        public void add()
+
+        private async void miejsce_Clicked(object sender, EventArgs e)
         {
-            _Rejon = new List<Rejon>();
-            _Rejon.Add(new Rejon() { miejsce = "Osowa" });
-            _Rejon.Add(new Rejon() { miejsce = "Osowa" });
-            listView.ItemsSource = _Rejon;
+            Button miejsce = (Button)sender;
+
+            await DisplayAlert("test", miejsce.Text, "ok");
         }
     }
 }

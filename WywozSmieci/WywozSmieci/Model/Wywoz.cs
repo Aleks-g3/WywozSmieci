@@ -5,10 +5,12 @@ using System.Text;
 
 namespace WywozSmieci.Model
 {
-    public class Rejon
+    public class Wywoz
     {
         [Key]
         public int Id { get; set; }
-        public string Miejsce { get; set; }
+        public Rejon rejon { get; set; }
+        public string Typ { get; set; }
+        public DateTime Data { get; set; }
     }
 }

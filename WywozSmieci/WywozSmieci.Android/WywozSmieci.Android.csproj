@@ -88,14 +88,19 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\drawable\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\..\WywozSmieci.Database\WywozSmieci.Database.csproj">
+      <Project>{687C27E8-EC0F-4F5D-970D-B9E805CA9125}</Project>
+      <Name>WywozSmieci.Database</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WywozSmieci\WywozSmieci.csproj">
       <Project>{3A227580-BC0D-4E7F-808B-06D9AFC12A1C}</Project>
       <Name>WywozSmieci</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\worek.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
