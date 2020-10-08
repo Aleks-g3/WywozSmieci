@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using SQLite;
+using System;
 
 namespace WywozSmieci.Model
 {
     public class Wywoz
     {
-        [Key]
-        public int Id { get; set; }
-        public Rejon rejon { get; set; }
-        public string Typ { get; set; }
-        public DateTime Data { get; set; }
+        public RodzajSmieci RodzajSmieci { get; set; }
+        public string Data { get; set; }
+        
     }
 }

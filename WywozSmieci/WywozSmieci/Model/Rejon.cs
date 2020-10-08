@@ -1,14 +1,24 @@
-﻿using System;
+﻿
+
+using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace WywozSmieci.Model
 {
+
+    
     public class Rejon
     {
-        [Key]
-        public int Id { get; set; }
+
+        
         public string Miejsce { get; set; }
+        public List<Wywoz> Wywozy { get; set; }
+
     }
 }

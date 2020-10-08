@@ -7,16 +7,27 @@
              x:Class="WywozSmieci.MainPage">
 
     <StackLayout>
-        <ListView x:Name="listView" ItemsSource="{Binding Wywozy}" HasUnevenRows="True">
+        <ListView x:Name="listView" HasUnevenRows="True">
             <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10,10,10,20" Spacing="30" HeightRequest="100">
-                            <StackLayout VerticalOptions="Center" HeightRequest="100">
-                                <ImageButton x:Name="miejsce" Source="worek.jpg" CornerRadius="40" WidthRequest="60" HeightRequest="60" Scale="1" Clicked="miejsce_Clicked" BackgroundColor="White"/>
-                                <Label Text="{Binding rejon}"/>
+                <DataTemplate x:Name="DataTemp">
+                    <ViewCell x:Name="view">
+                        <StackLayout x:Name="Stack1" Orientation="Horizontal" HorizontalOptions="Center" Padding="10,10,10,20" Spacing="30">
+                            <FlexLayout HorizontalOptions="Center" VerticalOptions="Center" JustifyContent="Center" AlignItems="Center" AlignContent="Center" Direction="Column" MinimumHeightRequest="100">
+                                <ImageButton x:Name="miejsce" Source="worek.jpg" CornerRadius="40" WidthRequest="60" HeightRequest="60" Scale="1" Clicked="miejsce_Clicked" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Text="{Binding Miejsce}" HorizontalOptions="Center" HeightRequest="50" HorizontalTextAlignment="Center"/>
+                                <CollectionView ItemsSource="{Binding Wywozy}" IsVisible="false" HeightRequest="100" HorizontalOptions="Center">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Label Text="{Binding RodzajSmieci.Typ}" Grid.Column="0"/>
+                                                <Label Text="{Binding Data}" Grid.Column="1"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
                                 
-                            </StackLayout>
+                                
+                            </FlexLayout>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

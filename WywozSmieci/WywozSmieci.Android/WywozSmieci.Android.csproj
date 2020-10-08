@@ -54,11 +54,11 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite">
-      <Version>3.1.6</Version>
+    <PackageReference Include="Naxam.Layouts.FlexLayout">
+      <Version>1.0.1.1</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.5.0.495" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1269" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -66,6 +66,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\Wywozy.db" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -90,10 +91,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\..\WywozSmieci.Database\WywozSmieci.Database.csproj">
-      <Project>{687C27E8-EC0F-4F5D-970D-B9E805CA9125}</Project>
-      <Name>WywozSmieci.Database</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WywozSmieci\WywozSmieci.csproj">
       <Project>{3A227580-BC0D-4E7F-808B-06D9AFC12A1C}</Project>
       <Name>WywozSmieci</Name>
